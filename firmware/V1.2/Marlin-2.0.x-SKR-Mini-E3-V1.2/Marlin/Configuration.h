@@ -474,9 +474,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  #define DEFAULT_Kp 21.41
+  #define DEFAULT_Ki 1.28
+  #define DEFAULT_Kd 89.69
 
 #endif // PIDTEMP
 
@@ -706,7 +706,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 493 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 410 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1553,6 +1553,10 @@
 //=============================================================================
 //============================= LCD and SD support ============================
 //=============================================================================
+
+#define ST7920_DELAY_1 DELAY_NS(1500)
+#define ST7920_DELAY_2 DELAY_NS(1500)
+#define ST7920_DELAY_3 DELAY_NS(1500)
 
 // @section lcd
 
