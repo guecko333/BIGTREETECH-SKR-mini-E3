@@ -484,9 +484,15 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Creality Ender-3
+<<<<<<< Updated upstream
   #define DEFAULT_Kp 21.73
   #define DEFAULT_Ki 1.54
   #define DEFAULT_Kd 76.55
+=======
+  #define DEFAULT_Kp 12.32
+  #define DEFAULT_Ki 0.56
+  #define DEFAULT_Kd 67.91
+>>>>>>> Stashed changes
 
 #endif // PIDTEMP
 
@@ -720,7 +726,11 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
+<<<<<<< Updated upstream
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+=======
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 576 }
+>>>>>>> Stashed changes
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -946,11 +956,18 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
+<<<<<<< Updated upstream
 #define NOZZLE_TO_PROBE_OFFSET {-25,-20, -1.85 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define MIN_PROBE_EDGE 20
+=======
+#define NOZZLE_TO_PROBE_OFFSET { 40.5, 0, -1.68 }
+
+// Certain types of probes need to stay away from edges
+#define MIN_PROBE_EDGE 50
+>>>>>>> Stashed changes
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -1087,7 +1104,7 @@
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS -10
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
