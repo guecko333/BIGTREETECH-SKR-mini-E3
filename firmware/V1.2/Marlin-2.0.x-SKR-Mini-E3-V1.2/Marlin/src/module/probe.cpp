@@ -118,10 +118,10 @@ xyz_pos_t Probe::offset; // Initialized by settings.load()
 #elif ENABLED(TOUCH_MI_PROBE)
 
   // Move to the magnet to unlock the probe
-  inline void run_deploy_moves_script() {
-    #ifndef TOUCH_MI_DEPLOY_XPOS
-      #define TOUCH_MI_DEPLOY_XPOS X_MIN_POS
-    #elif TOUCH_MI_DEPLOY_XPOS > X_MAX_BED
+  void run_deploy_moves_script() {
+    #ifndef TOUCH_MI_DEPLOY_XPOS // à ajouter
+      #define TOUCH_MI_DEPLOY_XPOS X_MIN_POS // à ajouter
+    #elif TOUCH_MI_DEPLOY_XPOS > X_MAX_BED // à modifier
       TemporaryGlobalEndstopsState unlock_x(false);
     #endif
     #if TOUCH_MI_DEPLOY_YPOS > Y_MAX_BED

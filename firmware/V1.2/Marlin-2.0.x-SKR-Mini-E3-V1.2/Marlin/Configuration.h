@@ -484,9 +484,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  #define DEFAULT_Kp 20.26
+  #define DEFAULT_Ki 1.41
+  #define DEFAULT_Kd 72.61
 
 #endif // PIDTEMP
 
@@ -886,7 +886,7 @@
  * Also requires: BABYSTEPPING, BABYSTEP_ZPROBE_OFFSET, Z_SAFE_HOMING,
  *                and a minimum Z_HOMING_HEIGHT of 10.
  */
-//#define TOUCH_MI_PROBE
+#define TOUCH_MI_PROBE
 #if ENABLED(TOUCH_MI_PROBE)
   #define TOUCH_MI_RETRACT_Z 0.5                  // Height at which the probe retracts
   //#define TOUCH_MI_DEPLOY_XPOS (X_MAX_BED + 2)  // For a magnet on the right side of the bed
@@ -946,10 +946,9 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET {-25,-20, -1.85 }
+#define NOZZLE_TO_PROBE_OFFSET { -45, -20, 0 }
 
-// Most probes should stay away from the edges of the bed, but
-// with NOZZLE_AS_PROBE this can be negative for a wider probing area.
+// Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 20
 
 // X and Y axis travel speed (mm/m) between probes
@@ -1068,10 +1067,8 @@
 
 //#define UNKNOWN_Z_NO_RAISE      // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-//#define Z_HOMING_HEIGHT  4      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
-                                  // Be sure to have this much clearance over your Z_MAX_POS to prevent grinding.
-
-//#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z
+#define Z_HOMING_HEIGHT 10  // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+                             // Be sure you have this distance over your Z_MAX_POS in case.
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
@@ -1464,13 +1461,13 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 180
-#define PREHEAT_1_TEMP_BED     45
+#define PREHEAT_1_TEMP_HOTEND 220
+#define PREHEAT_1_TEMP_BED     50
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    110
+#define PREHEAT_2_LABEL       "TPU"
+#define PREHEAT_2_TEMP_HOTEND 220
+#define PREHEAT_2_TEMP_BED    0
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 /**
@@ -1606,7 +1603,7 @@
  *
  * :{ 'en':'English', 'an':'Aragonese', 'bg':'Bulgarian', 'ca':'Catalan', 'cz':'Czech', 'da':'Danish', 'de':'German', 'el':'Greek', 'el_gr':'Greek (Greece)', 'es':'Spanish', 'eu':'Basque-Euskera', 'fi':'Finnish', 'fr':'French', 'gl':'Galician', 'hr':'Croatian', 'it':'Italian', 'jp_kana':'Japanese', 'ko_KR':'Korean (South Korea)', 'nl':'Dutch', 'pl':'Polish', 'pt':'Portuguese', 'pt_br':'Portuguese (Brazilian)', 'ru':'Russian', 'sk':'Slovak', 'tr':'Turkish', 'uk':'Ukrainian', 'vi':'Vietnamese', 'zh_CN':'Chinese (Simplified)', 'zh_TW':'Chinese (Traditional)', 'test':'TEST' }
  */
-#define LCD_LANGUAGE en
+#define LCD_LANGUAGE fr
 
 /**
  * LCD Character Set
