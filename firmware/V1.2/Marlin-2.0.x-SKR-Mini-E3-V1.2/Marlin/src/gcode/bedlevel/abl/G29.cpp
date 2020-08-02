@@ -457,6 +457,13 @@ G29_TYPE GcodeSuite::G29() {
       #endif
       if (gridSpacing != bilinear_grid_spacing || probe_position_lf != bilinear_start) {
         // Reset grid to 0.0 or "not probed". (Also disables ABL)
+        if (gridSpacing != bilinear_grid_spacing){
+          if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> grid spacing issue");
+        }
+        if (probe_position_lf != bilinear_start){
+          if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> probe_position_lf issue");
+        }
+
         reset_bed_level();
 
         // Initialize a grid with the given dimensions
@@ -804,11 +811,16 @@ G29_TYPE GcodeSuite::G29() {
     #endif
   #endif
 
+  if (isnan(measured_z)) {
+     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> measured_z issue");
+  }
+  
   // Calculate leveling, print reports, correct the position
   if (!isnan(measured_z)) {
     #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
       if (!dryrun) extrapolate_unprobed_bed_level();
+      if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> printing grid");
       print_bilinear_leveling_grid();
 
       refresh_bed_level();
