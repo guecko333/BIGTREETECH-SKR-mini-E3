@@ -461,6 +461,14 @@ G29_TYPE GcodeSuite::G29() {
         if (!no_action)
       #endif
       if (gridSpacing != bilinear_grid_spacing || probe_position_lf != bilinear_start) {
+       
+        if (gridSpacing != bilinear_grid_spacing){
+          if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> grid spacing issue");
+        }
+        if (probe_position_lf != bilinear_start){
+          if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> probe_position_lf issue");
+        }
+
         // Reset grid to 0.0 or "not probed". (Also disables ABL)
         reset_bed_level();
 
