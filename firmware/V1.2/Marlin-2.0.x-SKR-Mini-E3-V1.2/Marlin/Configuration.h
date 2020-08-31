@@ -474,9 +474,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Creality Ender-3
-  #define DEFAULT_Kp 25.12
-  #define DEFAULT_Ki 1.91
-  #define DEFAULT_Kd 82.56
+  #define DEFAULT_Kp 18.35
+  #define DEFAULT_Ki 1.31
+  #define DEFAULT_Kd 64.42
 
 #endif // PIDTEMP
 
@@ -909,10 +909,10 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -41.24, -6.25, -0.8 }
+#define NOZZLE_TO_PROBE_OFFSET { 40.5, 0, -3.3 }
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 10
+#define MIN_PROBE_EDGE 41
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
