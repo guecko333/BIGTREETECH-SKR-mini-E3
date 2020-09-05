@@ -484,9 +484,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  #define DEFAULT_Kp 18.35
+  #define DEFAULT_Ki 1.31
+  #define DEFAULT_Kd 64.42
 
 #endif // PIDTEMP
 
@@ -1464,13 +1464,13 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 180
-#define PREHEAT_1_TEMP_BED     45
+#define PREHEAT_1_TEMP_HOTEND 210
+#define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    110
+#define PREHEAT_2_LABEL       "TPU"
+#define PREHEAT_2_TEMP_HOTEND 220
+#define PREHEAT_2_TEMP_BED    50
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 /**
@@ -1484,7 +1484,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
@@ -1593,6 +1593,10 @@
 //=============================================================================
 //============================= LCD and SD support ============================
 //=============================================================================
+
+#define ST7920_DELAY_1 DELAY_NS(1500)
+#define ST7920_DELAY_2 DELAY_NS(1500)
+#define ST7920_DELAY_3 DELAY_NS(1500)
 
 // @section lcd
 
